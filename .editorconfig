@@ -1,5 +1,5 @@
+# 配置编辑器的语法
 root = true
-
 [*]
 charset = utf-8
 indent_style = space

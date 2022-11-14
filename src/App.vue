@@ -1,3 +1,4 @@
+<!--项目根组件-->
 <template>
   <div id="app">
     <img src="./assets/logo.png">
