@@ -14,7 +14,8 @@ export default {
 
 <style lang="stylus" scoped>
 //@import "../../../assets/styles/varibles.styl"
-@import "~@/assets/styles/varibles.styl"
+// css引入其他css,需要加波浪线
+@import "~styles/varibles.styl"
 
   .header
     display :flex
