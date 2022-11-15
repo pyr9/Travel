@@ -12,8 +12,12 @@
   },
   "dependencies": {
     "fastclick": "^1.0.6",
+    "install": "^0.13.0",
+    "npm": "^9.1.1",
+    "stylus": "^0.59.0",
+    "stylus-loader": "^3.0.0",
     "vue": "^2.5.2",
-    "vue-router": "^3.0.1"
+    "vue-router": "^3.6.5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
