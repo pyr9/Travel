@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import HomeHeader from './HomeHeader'
+import HomeHeader from './components/Header'
 
 export default {
   name: 'Home',
