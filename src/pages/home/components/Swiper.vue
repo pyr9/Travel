@@ -12,13 +12,21 @@ export default {
   data () {
     return {
       swiperOptions: {
+        pagination: {
+          el: '.swiper-pagination'
+        }
       }
     }
   }
 }
 </script>
 <style lang="stylus" scoped>
+   //加了scope后，只能修饰本组件的样式，swiper-pagination-bullet-active不是当前组件的class，
+   // 采用>>> 进行样式穿透，之后swiper组件的该class都会被改成白色
+  .swiper >>> .swiper-pagination-bullet-active
+    background  white
   .swiper
+     // 使得长宽永远保持31.25%
      width 100%
      height 0
      overflow hidden
