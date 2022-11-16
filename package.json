@@ -16,7 +16,9 @@
     "npm": "^9.1.1",
     "stylus": "^0.59.0",
     "stylus-loader": "^3.0.0",
+    "swiper": "^5.4.5",
     "vue": "^2.5.2",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
