@@ -26,7 +26,7 @@ export default {
         {
           id: '0001',
           imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/gonglue.png',
-          desc: '景点门票01'
+          desc: '景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01'
         },
         {
           id: '0002',
@@ -93,6 +93,7 @@ export default {
 
 <style scoped lang="stylus">
 @import "~styles/varibles.styl"
+@import "~styles/mixins.styl"
   .icons >>> .swiper-container
     height 0
     padding-bottom 50%
@@ -124,4 +125,5 @@ export default {
         height .44rem
         text-align center
         color $darkTextColor
+        ellipsis()
 </style>
