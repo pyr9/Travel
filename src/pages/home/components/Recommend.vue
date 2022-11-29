@@ -13,7 +13,7 @@
             <div class="desc-content">
               <p class="desc-title">{{ recommend.title }}</p>
               <p class="desc-info">
-                {{ recommend.info }}</p>
+                {{ recommend.desc }}</p>
               <button class="desc-button">查看详情</button>
             </div>
           </div>
@@ -27,35 +27,8 @@
 <script>
 export default {
   name: 'Recommend',
-  data: function () {
-    return {
-      recommendList: [
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p22/201211/02/79e77fe51ee7579793835fbb.jpg_200x200_367fcc60.jpg',
-          title: '梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅',
-          info: '人间仙境杭州，佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！'
-        },
-        {
-          id: '002',
-          imgUrl: 'https://imgs.qunarzz.com/sight/p0/1903/f4/f458a2c1e2e35edba3.img.jpg_200x200_657b1119.jpg',
-          title: '梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅',
-          info: '人间仙境杭州，佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！'
-        },
-        {
-          id: '003',
-          imgUrl: 'https://imgs.qunarzz.com/sight/p0/201403/21/83a2599d05c5ce25b76b0675eff7fd84.jpg_200x200_83cba736.jpg',
-          title: '梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅',
-          info: '人间仙境杭州，佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！'
-        },
-        {
-          id: '004',
-          imgUrl: 'https://imgs.qunarzz.com/sight/p0/1602/de/de8400021b664c5390.img.jpg_200x200_46b16057.jpg',
-          title: '梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅',
-          info: '人间仙境杭州，佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！'
-        }
-      ]
-    }
+  props: {
+    recommendList: Array
   }
 }
 </script>

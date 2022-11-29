@@ -20,61 +20,13 @@ import HomeSwiper from './HomeSwiper'
 
 export default {
   name: 'Icons',
-  data: function () {
-    return {
-      iconImgUrlList: [
-        {
-          id: '0001',
-          imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/gonglue.png',
-          desc: '景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01景点门票01'
-        },
-        {
-          id: '0002',
-          imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/bitiyan.png',
-          desc: '景点门票02'
-        },
-        {
-          id: '0003',
-          imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/jingdian.png',
-          desc: '景点门票03'
-        },
-        {
-          id: '0004',
-          imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/zhusu.png',
-          desc: '景点门票04'
-        },
-        {
-          id: '0005',
-          imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/tesetiyan.png',
-          desc: '景点门票05'
-        },
-        {
-          id: '0006',
-          imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/gouwu.png',
-          desc: '景点门票06'
-        },
-        {
-          id: '0007',
-          imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/luxian.png',
-          desc: '景点门票07'
-        },
-        {
-          id: '0008',
-          imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/youji.png',
-          desc: '景点门票08'
-        },
-        {
-          id: '0009',
-          imgUrl: '//s.qunarzz.com/travel/travel_hy2/2019/gonglue.png',
-          desc: '景点门票09'
-        }
-      ]
-    }
+  props: {
+    iconList: Array
   },
   computed: {
     pages () {
       const pages = []
-      this.iconImgUrlList.forEach((item, index) => {
+      this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []

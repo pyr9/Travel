@@ -5,7 +5,7 @@
     </div>
     <div class="list">
       <ul>
-        <li v-for="recommend in recommendList" :key="recommend.id">
+        <li v-for="recommend in weekendList" :key="recommend.id">
           <div class="item">
             <div class="img">
               <img class="img-content" :src="recommend.imgUrl"/>
@@ -13,7 +13,7 @@
             <div class="desc-content">
               <p class="desc-title">{{ recommend.title }}</p>
               <p class="desc-info">
-                {{ recommend.info }}</p>
+                {{ recommend.desc }}</p>
             </div>
           </div>
         </li>
@@ -26,29 +26,8 @@
 <script>
 export default {
   name: 'Weekend',
-  data: function () {
-    return {
-      recommendList: [
-        {
-          id: '001',
-          imgUrl: 'https://imgs.qunarzz.com/sight/source/1505/74/98a840f2a881b.jpg_r_640x214_1bf94c8e.jpg',
-          title: '梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅',
-          info: '人间仙境杭州，佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！'
-        },
-        {
-          id: '002',
-          imgUrl: 'https://imgs.qunarzz.com/sight/source/1505/19/58f233e11df7ef.jpg_r_640x214_6b42c9fc.jpg',
-          title: '梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅',
-          info: '人间仙境杭州，佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！'
-        },
-        {
-          id: '003',
-          imgUrl: 'https://imgs.qunarzz.com/sight/source/1507/98/d9c848b0d7d65a.jpg_r_640x214_55778a01.jpg',
-          title: '梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅',
-          info: '人间仙境杭州，佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！'
-        }
-      ]
-    }
+  props: {
+    weekendList: Array
   }
 }
 </script>
