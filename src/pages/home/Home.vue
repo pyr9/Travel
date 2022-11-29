@@ -4,6 +4,7 @@
     <home-swiper :imgList="headerImgList"></home-swiper>
     <icons></icons>
     <recommend></recommend>
+    <weekend></weekend>
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import HomeHeader from './components/Header'
 import HomeSwiper from './components/swiper'
 import Icons from './components/Icons'
 import Recommend from './components/Recommend'
+import Weekend from './components/Weekend'
 
 export default {
   name: 'Home',
@@ -19,7 +21,8 @@ export default {
     HomeHeader,
     HomeSwiper,
     Icons,
-    Recommend
+    Recommend,
+    Weekend
   },
   data () {
     return {
