@@ -11,8 +11,9 @@
                 <img class="img-content" src="http://img1.qunarzz.com/sight/p22/201211/02/79e77fe51ee7579793835fbb.jpg_200x200_367fcc60.jpg"/>
               </div>
             <div class="desc-content">
-              <p class="desc-title">梅峰揽胜</p>
-              <p class="desc-info">人间仙境杭州，佛教圣地普陀山等你来玩！</p>
+              <p class="desc-title">梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜梅峰揽胜</p>
+              <p class="desc-info">
+                人间仙境杭州，佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！佛教圣地普陀山等你来玩！</p>
               <button class="desc-button">查看详情</button>
             </div>
           </div>
@@ -30,6 +31,7 @@ export default {
 </script>
 
 <style scoped lang="stylus">
+@import "~styles/mixins.styl"
   .top
     line-height .8rem
     height .8rem
@@ -47,14 +49,15 @@ export default {
   .desc-content
     flex 1
     padding .1rem
-
+    min-width 0
     .desc-title
       font-size .32rem
       line-height 0.54rem
-
+      ellipsis()
     .desc-info
       line-height .4rem
       color #ccc
+      ellipsis()
 
     .desc-button
       line-height .44rem
