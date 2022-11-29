@@ -10,10 +10,10 @@
 
 <script>
 import HomeHeader from './components/Header'
-import HomeSwiper from './components/swiper'
 import Icons from './components/Icons'
 import Recommend from './components/Recommend'
 import Weekend from './components/Weekend'
+import axios from 'axios'
 import HomeSwiper from './components/HomeSwiper'
 
 export default {
@@ -38,6 +38,17 @@ export default {
         }
       ]
     }
+  },
+  methods: {
+    getHomeInfo () {
+      axios.get('/static/mock/index.json').then(this.getHomeInfoSucess)
+    },
+    getHomeInfoSucess (res) {
+      console.log(res)
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
 }
 </script>
