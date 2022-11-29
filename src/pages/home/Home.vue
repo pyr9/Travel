@@ -14,6 +14,7 @@ import HomeSwiper from './components/swiper'
 import Icons from './components/Icons'
 import Recommend from './components/Recommend'
 import Weekend from './components/Weekend'
+import HomeSwiper from './components/HomeSwiper'
 
 export default {
   name: 'Home',

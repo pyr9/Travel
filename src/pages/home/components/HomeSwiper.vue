@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: 'carrousel',
+  name: 'HomeSwiper',
   props: {
     imgList: Array
   },

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import HomeSwiper from './Swiper'
+import HomeSwiper from './HomeSwiper'
 
 export default {
   name: 'Icons',
@@ -79,7 +79,6 @@ export default {
         if (!pages[page]) {
           pages[page] = []
         }
-        console.log(pages)
         pages[page].push(item)
       })
       return pages
