@@ -152,7 +152,6 @@ export default {
   bottom 0
   right 0
   overflow hidden
-
 .border-around
   &:before
     border-color: #ccc

@@ -3,6 +3,7 @@
     <city-header></city-header>
     <city-search></city-search>
     <city-list></city-list>
+    <alphabet></alphabet>
   </div>
 </template>
 
@@ -10,13 +11,15 @@
 import CityHeader from './Header'
 import CitySearch from './search'
 import CityList from './CityList'
+import Alphabet from './Alphabet'
 
 export default {
   name: 'City',
   components: {
     CityHeader,
     CitySearch,
-    CityList
+    CityList,
+    Alphabet
   }
 }
 </script>
