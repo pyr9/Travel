@@ -41,16 +41,12 @@ export default {
     getHomeInfoSucess (res) {
       const data = res.data.data
       if (data) {
-        console.log(this.city)
-
         this.city = '北京'
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.recommendList = data.recommendList
         this.weekendList = data.weekendList
       }
-      console.log(this.city)
-      console.log(this.swiperList)
     }
   },
   mounted () {
