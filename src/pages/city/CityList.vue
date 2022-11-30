@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="list">
     <div class="current">
       <div class="title border-around">
         您的位置
@@ -45,6 +45,86 @@
     </div>
     <div class="letter">
       <div class="title border-around">A</div>
+      <div class="item-list">
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+        <div class="item border-around">
+          阿拉尔
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -57,6 +137,14 @@ export default {
 
 <style scoped lang="stylus">
 @import "~styles/varibles.styl"
+.list
+  position absolute
+  top 1.58rem
+  left 0
+  bottom 0
+  right 0
+  background-color red
+
 .border-around
   &:before
     border-color: #ccc
@@ -87,4 +175,12 @@ export default {
     padding .1rem 0
     text-align center
     border-radius .05rem
+
+.item-list
+
+  .item
+    height .5rem
+    line-height .5rem
+    padding .1rem 0 .1rem .2rem
+
 </style>
