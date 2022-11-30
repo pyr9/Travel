@@ -1,6 +1,6 @@
 <template>
   <div class="list">
-    <div v-for="(_, key) in cities" :key="key">{{ key }}</div>
+    <div v-for="(_, key) in cities" :key="key" @click="handleLetterChange">{{ key }}</div>
   </div>
 </template>
 
@@ -9,6 +9,11 @@ export default {
   name: 'Alphabet',
   props: {
     cities: Object
+  },
+  methods: {
+    handleLetterChange (e) {
+      this.$emit('letterChanged', e.target.innerHTML)
+    }
   }
 }
 </script>
