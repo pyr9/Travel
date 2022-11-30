@@ -1,14 +1,15 @@
 <template>
   <div class="list">
-    <div>A</div>
-    <div>A</div>
-    <div>A</div>
+    <div v-for="(_, key) in cities" :key="key">{{ key }}</div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Alphabet'
+  name: 'Alphabet',
+  props: {
+    cities: Object
+  }
 }
 </script>
 
@@ -21,7 +22,6 @@ export default {
   top 1.54rem
   width .5rem
   bottom 0
-  background-color red
   display flex
   flex-direction column
   justify-content center
