@@ -23,11 +23,11 @@ export default {
 @import "~styles/varibles.styl"
 
   .header
-    display :flex
-    background-color :$bgColor
-    height: .86rem
-    line-height : .86rem
-    color :white
+    display: flex
+    background-color: $bgColor
+    height: $headerHeight
+    line-height: $headerHeight
+    color: white
   .header-left
     width: .64rem
     float :left
@@ -47,6 +47,7 @@ export default {
     width: 1.24rem
     float :right
     text-align: center
+    color white
     .icon
       font-size .2rem
 </style>
