@@ -43,7 +43,7 @@ export default {
       if (data) {
         console.log(this.city)
 
-        this.city = data.city
+        this.city = '北京'
         this.swiperList = data.swiperList
         this.iconList = data.iconList
         this.recommendList = data.recommendList
