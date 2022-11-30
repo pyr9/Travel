@@ -4,7 +4,7 @@
 .border-right,
 .border-bottom,
 .border-left,
-.border-topbottom,
+.border-around,
 .border-rightleft,
 .border-topleft,
 .border-rightbottom,
@@ -18,8 +18,8 @@
 .border-right::before,
 .border-bottom::before,
 .border-left::before,
-.border-topbottom::before,
-.border-topbottom::after,
+.border-around::before,
+.border-around::after,
 .border-rightleft::before,
 .border-rightleft::after,
 .border-topleft::before,
@@ -52,8 +52,8 @@
 
 .border-top::before,
 .border-bottom::before,
-.border-topbottom::before,
-.border-topbottom::after,
+.border-around::before,
+.border-around::after,
 .border-topleft::before,
 .border-rightbottom::after,
 .border-topright::before,
@@ -77,7 +77,7 @@
 }
 
 .border-top::before,
-.border-topbottom::before,
+.border-around::before,
 .border-topleft::before,
 .border-topright::before {
   border-top: 1px solid #eaeaea;
@@ -93,7 +93,7 @@
 }
 
 .border-bottom::before,
-.border-topbottom::after,
+.border-around::after,
 .border-rightbottom::after,
 .border-bottomleft::before {
   border-bottom: 1px solid #eaeaea;
@@ -109,7 +109,7 @@
 }
 
 .border-top::before,
-.border-topbottom::before,
+.border-around::before,
 .border-topleft::before,
 .border-topright::before {
   top: 0;
@@ -123,7 +123,7 @@
 }
 
 .border-bottom::before,
-.border-topbottom::after,
+.border-around::after,
 .border-rightbottom::after,
 .border-bottomleft::after {
   bottom: 0;
@@ -149,8 +149,8 @@
 
   .border-top::before,
   .border-bottom::before,
-  .border-topbottom::before,
-  .border-topbottom::after,
+  .border-around::before,
+  .border-around::after,
   .border-topleft::before,
   .border-rightbottom::after,
   .border-topright::before,
@@ -179,8 +179,8 @@
 
   .border-top::before,
   .border-bottom::before,
-  .border-topbottom::before,
-  .border-topbottom::after,
+  .border-around::before,
+  .border-around::after,
   .border-topleft::before,
   .border-rightbottom::after,
   .border-topright::before,
