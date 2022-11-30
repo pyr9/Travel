@@ -1,128 +1,130 @@
 <template>
-  <div class="list">
-    <div class="current">
-      <div class="title border-around">
-        您的位置
-      </div>
-      <div class="button-list">
-        <div class="button-wrapper">
-          <div class="button">
-            北京
+  <div class="list" ref="wrapper">
+    <div>
+      <div class="current">
+        <div class="title border-around">
+          您的位置
+        </div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <div class="button">
+              北京
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="hot">
+      <div class="hot">
 
-      <div class="title border-around">热门城市</div>
-      <div class="button-list">
-        <div class="button-wrapper">
-          <div class="button">
-            北京
+        <div class="title border-around">热门城市</div>
+        <div class="button-list">
+          <div class="button-wrapper">
+            <div class="button">
+              北京
+            </div>
           </div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">
-            北京
+          <div class="button-wrapper">
+            <div class="button">
+              北京
+            </div>
           </div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">
-            北京
+          <div class="button-wrapper">
+            <div class="button">
+              北京
+            </div>
           </div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">
-            北京
+          <div class="button-wrapper">
+            <div class="button">
+              北京
+            </div>
           </div>
-        </div>
-        <div class="button-wrapper">
-          <div class="button">
-            北京
+          <div class="button-wrapper">
+            <div class="button">
+              北京
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="letter">
-      <div class="title border-around">A</div>
-      <div class="item-list">
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
-        </div>
-        <div class="item border-around">
-          阿拉尔
+      <div class="letter">
+        <div class="title border-around">A</div>
+        <div class="item-list">
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
+          <div class="item border-around">
+            阿拉尔
+          </div>
         </div>
       </div>
     </div>
@@ -130,8 +132,14 @@
 </template>
 
 <script>
+
+import BScroll from 'better-scroll'
+
 export default {
-  name: 'CityList'
+  name: 'CityList',
+  mounted () {
+    this.scroll = new BScroll(this.$refs.wrapper)
+  }
 }
 </script>
 
@@ -143,7 +151,7 @@ export default {
   left 0
   bottom 0
   right 0
-  background-color red
+  overflow hidden
 
 .border-around
   &:before
@@ -153,7 +161,7 @@ export default {
     border-color #ccc
 
 .title
-  height .5rem
+  height .54rem
   line-height .5rem
   padding-left .2rem
   color #666
