@@ -8,7 +8,7 @@
         <div class="button-list">
           <div class="button-wrapper">
             <div class="button">
-              {{ city }}
+              {{ this.doubleCity }}
             </div>
           </div>
         </div>
@@ -40,7 +40,7 @@
 <script>
 
 import BScroll from 'better-scroll'
-import {mapMutations, mapState} from 'vuex'
+import {mapGetters, mapMutations, mapState} from 'vuex'
 
 export default {
   name: 'CityList',
@@ -72,6 +72,9 @@ export default {
     // }
     ...mapState(
       ['city']
+    ),
+    ...mapGetters(
+      ['doubleCity']
     )
   },
   updated () {
