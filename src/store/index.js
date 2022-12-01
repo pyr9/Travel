@@ -7,11 +7,6 @@ export default new Vuex.Store({
   state: {
     city: '上海'
   },
-  actions: {
-    cityChange (ctx, city) {
-      ctx.commit('changeCity', city)
-    }
-  },
   mutations: {
     changeCity (state, city) {
       state.city = city

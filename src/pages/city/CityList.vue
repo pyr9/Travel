@@ -51,8 +51,7 @@ export default {
   },
   methods: {
     handleCityClick (cityName) {
-      this.$store.dispatch('cityChange', cityName)
-      // alert(cityName)
+      this.$store.commit('changeCity', cityName)
     }
   },
   watch: {
