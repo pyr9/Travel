@@ -4,6 +4,7 @@
     <div class="search-content" ref="search">
       <ul>
         <li class="search-item border-bottom" v-for="city in list" :key="city.id">{{ city.name }}</li>
+        <li class="search-item border-bottom" v-show="hasNoData">没有出现匹配数据</li>
       </ul>
     </div>
   </div>
@@ -27,10 +28,19 @@ export default {
       list: []
     }
   },
+  computed: {
+    hasNoData () {
+      return !this.list.length
+    }
+  },
   watch: {
     keyWord () {
       if (this.timer) {
         clearTimeout(this.timer)
+      }
+      if (!this.keyWord) {
+        this.list = []
+        return
       }
       // Q: 这里的this.timer 什么时候为null，打印出来一直都是有值的？
       this.timer = setTimeout(() => {
