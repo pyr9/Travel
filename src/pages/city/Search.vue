@@ -1,12 +1,39 @@
 <template>
   <div class="search">
-    <input class="search-input" type="text" placeholder="请输入城市或拼音">
+    <input v-model="keyWord" class="search-input" type="text" placeholder="请输入城市或拼音">
+    <div class="search-content">
+      <ul>
+        <li v-for="city in list" :key="city.id">{{ city.name }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Search'
+  name: 'Search',
+  props: {
+    cities: Object
+  },
+  data () {
+    return {
+      keyWord: '',
+      list: []
+    }
+  },
+  watch: {
+    keyWord () {
+      const result = []
+      for (const citiesKey in this.cities) {
+        this.cities[citiesKey].forEach(city => {
+          if (city.spell.indexOf(this.keyWord) > -1 || city.name.indexOf(this.keyWord) > -1) {
+            result.push(city)
+          }
+        })
+        this.list = result
+      }
+    }
+  }
 }
 </script>
 
@@ -26,4 +53,14 @@ export default {
     border-radius .05rem
     padding 0 .1rem
     color #666
+
+  .search-content
+    background-color red
+    position absolute
+    top 1.58rem
+    left 0
+    right 0
+    bottom 0
+    z-index 1
+    overflow hidden
 </style>
