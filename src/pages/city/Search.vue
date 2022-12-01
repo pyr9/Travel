@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <input v-model="keyWord" class="search-input" type="text" placeholder="请输入城市或拼音">
-    <div class="search-content">
+    <div class="search-content" ref="search">
       <ul>
         <li class="search-item border-bottom" v-for="city in list" :key="city.id">{{ city.name }}</li>
       </ul>
@@ -10,10 +10,16 @@
 </template>
 
 <script>
+import BScroll from 'better-scroll'
+
 export default {
   name: 'Search',
   props: {
     cities: Object
+  },
+  // Q2: 是否可以改成mounted, 刷新页面后却发现滚动失效了
+  updated () {
+    this.scroll = new BScroll(this.$refs.search)
   },
   data () {
     return {
@@ -27,7 +33,6 @@ export default {
         clearTimeout(this.timer)
       }
       // Q: 这里的this.timer 什么时候为null，打印出来一直都是有值的？
-      console.log(this.timer)
       this.timer = setTimeout(() => {
         const result = []
         for (const citiesKey in this.cities) {
@@ -70,7 +75,7 @@ export default {
     bottom 0
     z-index 1
     overflow hidden
-    background-color #eee
+    background-color #fff
 
     .search-item
       line-height .6rem

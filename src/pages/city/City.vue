@@ -30,6 +30,9 @@ export default {
       letter: ''
     }
   },
+  // Q1: 是否可以改成created()
+  // 这里不依赖某个dom元素，是可以改的吧,
+  // created() 和mounted的区别?
   mounted () {
     this.queryCityInfo()
   },
