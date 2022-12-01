@@ -18,7 +18,7 @@
         <div class="title border-around">热门城市</div>
         <div class="button-list">
           <div class="button-wrapper" v-for="hotCity in hotCities" :key="hotCity.id">
-            <div class="button">
+            <div class="button" @click="handleCityClick(hotCity.name)">
               {{ hotCity.name }}
             </div>
           </div>
@@ -49,8 +49,11 @@ export default {
     cities: Object,
     letter: String
   },
-  mounted () {
-    this.scroll = new BScroll(this.$refs.wrapper)
+  methods: {
+    handleCityClick (cityName) {
+      this.$store.dispatch('cityChange', cityName)
+      // alert(cityName)
+    }
   },
   watch: {
     letter () {
@@ -59,6 +62,9 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  mounted () {
+    this.scroll = new BScroll(this.$refs.wrapper)
   }
 }
 </script>
