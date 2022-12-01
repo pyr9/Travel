@@ -27,7 +27,7 @@
         <div class="letter" v-for="(items, key) in cities" :key="key" :ref="key">
           <div class="title border-around">{{ key }}</div>
           <div class="item-list">
-            <div class="item border-around" v-for="item in items" :key="item.id">
+            <div class="item border-around" v-for="item in items" :key="item.id" @click="handleCityClick(item.name)">
               {{ item.name }}
             </div>
           </div>
