@@ -5,7 +5,10 @@
     </div>
     <div class="list">
       <ul>
-        <li v-for="recommend in recommendList" :key="recommend.id">
+        <router-link tag="li"
+                     v-for="recommend in recommendList"
+                     :key="recommend.id"
+                     :to="'/detail/'+recommend.id">
           <div class="item">
             <div class="img">
               <img class="img-content" :src="recommend.imgUrl"/>
@@ -17,7 +20,7 @@
               <button class="desc-button">查看详情</button>
             </div>
           </div>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
