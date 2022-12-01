@@ -8,7 +8,7 @@
         <div class="button-list">
           <div class="button-wrapper">
             <div class="button">
-              {{ this.$store.state.city }}
+              {{ city }}
             </div>
           </div>
         </div>
@@ -40,11 +40,11 @@
 <script>
 
 import BScroll from 'better-scroll'
+import {mapState} from 'vuex'
 
 export default {
   name: 'CityList',
   props: {
-    city: String,
     hotCities: Array,
     cities: Object,
     letter: String
@@ -62,6 +62,14 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  computed: {
+    // city () {
+    //   return this.$store.state.city
+    // }
+    ...mapState(
+      ['city']
+    )
   },
   updated () {
     this.scroll = new BScroll(this.$refs.wrapper)
