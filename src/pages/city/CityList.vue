@@ -8,7 +8,7 @@
         <div class="button-list">
           <div class="button-wrapper">
             <div class="button">
-              {{ city }}
+              {{ this.$store.state.city }}
             </div>
           </div>
         </div>

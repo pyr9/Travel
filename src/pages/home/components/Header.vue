@@ -3,7 +3,7 @@
     <div class="header-left"><span class="iconfont">&#xe624;</span></div>
     <div class="header-input"><span class="iconfont">&#xe632;</span>输入景点/游玩/主题</div>
     <RouterLink to="/city">
-      <div class="header-right">{{ city }}<span class="iconfont icon">&#xeb6d;</span></div>
+      <div class="header-right">{{ this.$store.state.city }}<span class="iconfont icon">&#xeb6d;</span></div>
     </RouterLink>
   </div>
 </template>
