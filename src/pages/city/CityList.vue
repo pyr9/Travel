@@ -63,7 +63,7 @@ export default {
       }
     }
   },
-  mounted () {
+  updated () {
     this.scroll = new BScroll(this.$refs.wrapper)
   }
 }
