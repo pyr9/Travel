@@ -23,15 +23,23 @@ export default {
   },
   watch: {
     keyWord () {
-      const result = []
-      for (const citiesKey in this.cities) {
-        this.cities[citiesKey].forEach(city => {
-          if (city.spell.indexOf(this.keyWord) > -1 || city.name.indexOf(this.keyWord) > -1) {
-            result.push(city)
-          }
-        })
-        this.list = result
+      if (this.timer) {
+        clearTimeout(this.timer)
       }
+      // Q: 这里的this.timer 什么时候为null，打印出来一直都是有值的？
+      console.log(this.timer)
+      this.timer = setTimeout(() => {
+        const result = []
+        for (const citiesKey in this.cities) {
+          this.cities[citiesKey].forEach(city => {
+            // Q: spell下面的波浪线能否取消？
+            if (city.spell.indexOf(this.keyWord) > -1 || city.name.indexOf(this.keyWord) > -1) {
+              result.push(city)
+            }
+          })
+        }
+        this.list = result
+      }, 1000)
     }
   }
 }
