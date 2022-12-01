@@ -3,7 +3,7 @@
     <input v-model="keyWord" class="search-input" type="text" placeholder="请输入城市或拼音">
     <div class="search-content">
       <ul>
-        <li v-for="city in list" :key="city.id">{{ city.name }}</li>
+        <li class="search-item border-bottom" v-for="city in list" :key="city.id">{{ city.name }}</li>
       </ul>
     </div>
   </div>
@@ -63,7 +63,6 @@ export default {
     color #666
 
   .search-content
-    background-color red
     position absolute
     top 1.58rem
     left 0
@@ -71,4 +70,12 @@ export default {
     bottom 0
     z-index 1
     overflow hidden
+    background-color #eee
+
+    .search-item
+      line-height .6rem
+      height .6rem
+      padding-left .2rem
+      color #666
+
 </style>
