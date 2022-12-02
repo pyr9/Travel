@@ -5,7 +5,7 @@
     </div>
     <div class="info">
       <div class="title">黑河国家森林公园(AAAA景区)</div>
-      <div class="number"><span class="iconfont">&#xe632;</span>39</div>
+      <div class="number"><span class="iconfont banner-icon">&#xe8d3;</span>39</div>
     </div>
   </div>
 </template>
@@ -45,8 +45,12 @@ export default {
     margin-top .1rem
     height .32rem
     line-height .32rem
-    font-size .22rem
+    font-size .24rem
     padding 0 .4rem
     background-color black
     border-radius .2rem
+
+    .banner-icon
+      font-size .24rem
+
 </style>
