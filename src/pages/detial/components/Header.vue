@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="header">
+    <div class="header" @click="handleBannerClick">
       <div class="image">
         <img src="http://img1.qunarzz.com/sight/p0/1807/2d/2d7a02e81c797c44a3.img.jpg_600x330_9cd133ba.jpg" alt="">
       </div>
@@ -9,7 +9,7 @@
         <div class="number"><span class="iconfont banner-icon">&#xe8d3;</span>39</div>
       </div>
     </div>
-    <common-gallery :galleryImages="galleryImages"></common-gallery>
+    <common-gallery :galleryImages="galleryImages" v-show="showGallery"></common-gallery>
   </div>
 </template>
 
@@ -23,6 +23,7 @@ export default {
   },
   data: function () {
     return {
+      showGallery: false,
       galleryImages: [{
         id: '0001',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1512/c6/c6dddc6f90e9d62490.img.jpg_r_800x800_601298ff.jpg'
@@ -31,6 +32,11 @@ export default {
         id: '0002',
         imgUrl: 'http://img1.qunarzz.com/sight/p0/1503/5f/5fe7deead2ea1b6d.water.jpg_r_800x800_a8cc3823.jpg'
       }]
+    }
+  },
+  methods: {
+    handleBannerClick () {
+      this.showGallery = true
     }
   }
 }
