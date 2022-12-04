@@ -1,18 +1,38 @@
 <template>
-  <div class="header">
-    <div class="image">
-      <img src="http://img1.qunarzz.com/sight/p0/1807/2d/2d7a02e81c797c44a3.img.jpg_600x330_9cd133ba.jpg" alt="">
+  <div>
+    <div class="header">
+      <div class="image">
+        <img src="http://img1.qunarzz.com/sight/p0/1807/2d/2d7a02e81c797c44a3.img.jpg_600x330_9cd133ba.jpg" alt="">
+      </div>
+      <div class="info">
+        <div class="title">黑河国家森林公园(AAAA景区)</div>
+        <div class="number"><span class="iconfont banner-icon">&#xe8d3;</span>39</div>
+      </div>
     </div>
-    <div class="info">
-      <div class="title">黑河国家森林公园(AAAA景区)</div>
-      <div class="number"><span class="iconfont banner-icon">&#xe8d3;</span>39</div>
-    </div>
+    <common-gallery :galleryImages="galleryImages"></common-gallery>
   </div>
 </template>
 
 <script>
+import CommonGallery from '../../../common/gallery/Gallery'
+
 export default {
-  name: 'DetailHeader'
+  name: 'DetailHeader',
+  components: {
+    CommonGallery
+  },
+  data: function () {
+    return {
+      galleryImages: [{
+        id: '0001',
+        imgUrl: 'http://img1.qunarzz.com/sight/p0/1512/c6/c6dddc6f90e9d62490.img.jpg_r_800x800_601298ff.jpg'
+      },
+      {
+        id: '0002',
+        imgUrl: 'http://img1.qunarzz.com/sight/p0/1503/5f/5fe7deead2ea1b6d.water.jpg_r_800x800_a8cc3823.jpg'
+      }]
+    }
+  }
 }
 </script>
 
