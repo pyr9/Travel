@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" @click="handleGalleryClick">
     <div class="image-wrapper">
       <swiper class="swiper" :options="swiperOptions">
         <swiper-slide v-for="item of galleryImages" :key="item.id">
@@ -39,6 +39,11 @@ export default {
         loop: true,
         autoplay: false
       }
+    }
+  },
+  methods: {
+    handleGalleryClick (e) {
+      this.$emit('closeGallery')
     }
   }
 }

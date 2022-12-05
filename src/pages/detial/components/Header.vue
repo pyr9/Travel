@@ -9,7 +9,8 @@
         <div class="number"><span class="iconfont banner-icon">&#xe8d3;</span>39</div>
       </div>
     </div>
-    <common-gallery :galleryImages="galleryImages" v-show="showGallery"></common-gallery>
+    <common-gallery :galleryImages="galleryImages" v-show="showGallery"
+                    @closeGallery="handleGalleryClick"></common-gallery>
   </div>
 </template>
 
@@ -37,6 +38,9 @@ export default {
   methods: {
     handleBannerClick () {
       this.showGallery = true
+    },
+    handleGalleryClick () {
+      this.showGallery = false
     }
   }
 }
