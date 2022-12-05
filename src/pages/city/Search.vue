@@ -59,8 +59,7 @@ export default {
         const result = []
         for (const citiesKey in this.cities) {
           this.cities[citiesKey].forEach(city => {
-            // Q: spell下面的波浪线能否取消？
-            if (city.spell.indexOf(this.keyWord) > -1 || city.name.indexOf(this.keyWord) > -1) {
+            if (city.hasOwnProperty('spell') && (city.spell.indexOf(this.keyWord) > -1 || city.name.indexOf(this.keyWord) > -1)) {
               result.push(city)
             }
           })
