@@ -5,7 +5,7 @@
         <span class="iconfont">&#xe624;</span>
       </div>
     </router-link>
-    <div v-show="!showAbs" class="fixed">
+    <div v-show="!showAbs" :style="opacityStyle" class="fixed">
       景点详情
     </div>
   </div>
@@ -16,13 +16,25 @@ export default {
   name: 'Header',
   data: function () {
     return {
-      showAbs: true
+      showAbs: true,
+      opacityStyle: {
+        opacity: 0
+      }
     }
   },
   methods: {
     handleScroll () {
       const top = document.documentElement.scrollTop
-      this.showAbs = top <= 60
+      if (top > 43) {
+        let opacity = top / 140
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = {
+          opacity
+        }
+        this.showAbs = false
+      } else {
+        this.showAbs = true
+      }
     }
   },
   activated () {
