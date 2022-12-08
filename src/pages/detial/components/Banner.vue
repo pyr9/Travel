@@ -2,14 +2,14 @@
   <div>
     <div class="header" @click="handleBannerClick">
       <div class="image">
-        <img src="http://img1.qunarzz.com/sight/p0/1807/2d/2d7a02e81c797c44a3.img.jpg_600x330_9cd133ba.jpg" alt="">
+        <img :src="bannerImg" alt="">
       </div>
       <div class="info">
-        <div class="title">黑河国家森林公园(AAAA景区)</div>
-        <div class="number"><span class="iconfont banner-icon">&#xe8d3;</span>39</div>
+        <div class="title">{{ sightName }}}</div>
+        <div class="number"><span class="iconfont banner-icon">&#xe8d3;</span>{{ this.galleryImages.length }}</div>
       </div>
     </div>
-    <common-gallery :galleryImages="galleryImages" v-show="showGallery"
+    <common-gallery v-show="showGallery" :galleryImages="galleryImages"
                     @closeGallery="handleGalleryClick"></common-gallery>
   </div>
 </template>
@@ -19,20 +19,17 @@ import CommonGallery from '../../../common/gallery/Gallery'
 
 export default {
   name: 'DetailHeader',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    galleryImages: Array
+  },
   components: {
     CommonGallery
   },
   data: function () {
     return {
-      showGallery: false,
-      galleryImages: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1512/c6/c6dddc6f90e9d62490.img.jpg_r_800x800_601298ff.jpg'
-      },
-      {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1503/5f/5fe7deead2ea1b6d.water.jpg_r_800x800_a8cc3823.jpg'
-      }]
+      showGallery: false
     }
   },
   methods: {
@@ -46,7 +43,7 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus">
+<style lang="stylus" scoped>
 .header
   overflow hidden
   height 0
