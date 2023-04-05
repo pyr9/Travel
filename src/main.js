@@ -13,8 +13,9 @@ import fastClick from 'fastclick'
 import 'styles/reset.css'
 import 'styles/border.css'
 import 'styles/iconfont.css'
+import 'swiper/css';
+import 'swiper/css/effect-fade';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
 import store from './store'
 
 fastClick.attach(document.body)
