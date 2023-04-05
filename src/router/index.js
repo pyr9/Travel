@@ -1,31 +1,25 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '../pages/home/Home'
-import City from '../pages/city/City'
-import Detail from '../pages/detial/Detail'
+import {createRouter, createWebHashHistory} from 'vue-router'
+import HomeView from '../views/HomeView.vue'
 
-Vue.use(Router)
-
-// 项目下的所有路由
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: Home
-    },
-    {
-      path: '/city',
-      name: 'city',
-      component: City
-    },
-    {
-      path: '/detail/:id',
-      name: 'detail',
-      component: Detail
-    }
-  ],
-  scrollBehavior (to, from, savedPosition) {
-    return {x: 0, y: 0}
+const routes = [
+  {
+    path: '/',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/about',
+    name: 'about',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   }
+]
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes
 })
+
+export default router
