@@ -1,10 +1,10 @@
 <template>
     <div>
         <home-header></home-header>
-        <home-swiper :swiperList="data.swiperList"></home-swiper>
-        <icons :iconList="data.iconList"></icons>
-        <recommend :recommendList="data.recommendList"></recommend>
-        <weekend :weekendList="data.weekendList"></weekend>
+        <home-swiper :swiperList="swiperList"></home-swiper>
+        <icons :iconList="iconList"></icons>
+        <recommend :recommendList="recommendList"></recommend>
+        <weekend :weekendList="weekendList"></weekend>
     </div>
 </template>
 
@@ -15,7 +15,7 @@ import Recommend from './components/Recommend'
 import Weekend from './components/Weekend'
 import HomeSwiper from './components/HomeSwiper'
 import axios from "axios";
-import {onActivated, onMounted, reactive} from "vue";
+import {onActivated, onMounted, ref} from "vue";
 import {useStore} from "vuex";
 
 export default {
@@ -28,13 +28,12 @@ export default {
         Weekend
     },
     setup() {
-        const data = reactive({
-            lastCity: '',
-            swiperList: [],
-            iconList: [],
-            recommendList: [],
-            weekendList: []
-        })
+        // reactive主要用于将对象变成响应式对象， ref可以将基本类型变成响应式对象
+        const lastCity = ref('')
+        const swiperList = ref([])
+        const iconList = ref([])
+        const recommendList = ref([])
+        const weekendList = ref([])
         const store = useStore();
         const city = store.state.city
 
@@ -43,25 +42,26 @@ export default {
             const res = await axios.get('/api/index.json?city=' + city)
             const result = res.data.data
             if (result) {
-                data.swiperList = result.swiperList
-                data.iconList = result.iconList
-                data.recommendList = result.recommendList
-                data.weekendList = result.weekendList
+                // 这里由于ref实现是类似使用一个对象封装原来的对象，所以赋值不可以直接=，需要使用.value
+                swiperList.value = result.swiperList
+                iconList.value = result.iconList
+                recommendList.value = result.recommendList
+                weekendList.value = result.weekendList
             }
         }
 
         onMounted(() => {
-            data.lastCity = city
+            lastCity.value = city
             getHomeInfo()
         })
 
         onActivated(() => {
-            if (data.lastCity !== city) {
-                data.lastCity = city
+            if (lastCity !== city) {
+                lastCity.value = city
                 getHomeInfo()
             }
         })
-        return {data}
+        return {swiperList, iconList, recommendList, weekendList}
     }
     // data() {
     //     return {
