@@ -15,7 +15,7 @@ import Recommend from './components/Recommend'
 import Weekend from './components/Weekend'
 import HomeSwiper from './components/HomeSwiper'
 import axios from "axios";
-import {computed, onActivated, onMounted, reactive} from "vue";
+import {onActivated, onMounted, reactive} from "vue";
 import {useStore} from "vuex";
 
 export default {
@@ -36,16 +36,11 @@ export default {
             weekendList: []
         })
         const store = useStore();
-        const city = computed(() => {
-            console.log(store.state)
-            return store.state.city
-        })
+        const city = store.state.city
 
-        function getHomeInfo() {
-            axios.get('/api/index.json?city=' + city).then(getHomeInfoSuccess)
-        }
-
-        function getHomeInfoSuccess(res) {
+        // ync 用于申明一个 function 是异步的，而 await 用于等待一个异步方法执行完成。await 只能出现在 async 函数中
+        async function getHomeInfo() {
+            const res = await axios.get('/api/index.json?city=' + city)
             const result = res.data.data
             if (result) {
                 data.swiperList = result.swiperList
