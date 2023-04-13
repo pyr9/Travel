@@ -1,28 +1,29 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Home from '../pages/home/Home'
-import City from '../pages/city/City'
-import Detail from '../pages/detial/Detail'
+import {createRouter, createWebHashHistory} from 'vue-router'
+import Home from "@/views/home/Home";
+import City from "@/views/city/City";
+import Detail from "@/views/detial/Detail";
 
-Vue.use(Router)
-
-// 项目下的所有路由
-export default new Router({
-  routes: [
+const routes = [
     {
-      path: '/',
-      name: 'home',
-      component: Home
+        path: '/',
+        name: 'home',
+        component: Home
     },
     {
-      path: '/city',
-      name: 'city',
-      component: City
+        path: '/city',
+        name: 'city',
+        component: City
     },
     {
-      path: '/detail/:id',
-      name: 'detail',
-      component: Detail
+        path: '/detail/:id',
+        name: 'detail',
+        component: Detail
     }
-  ]
+]
+
+const router = createRouter({
+    history: createWebHashHistory(),
+    routes
 })
+
+export default router

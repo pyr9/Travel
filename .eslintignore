@@ -1,5 +1,0 @@
-// 这几个文件不需要受Eslint 规范限制
-/build/
-/config/
-/dist/
-/*.js
