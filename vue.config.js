@@ -10,12 +10,13 @@ module.exports = defineConfig({
 
     },
     devServer: {
+        port: 8084,
         proxy: {
             '/api': {
                 pathRewrite: {
                     '^/api': '/mock'
                 },
-                target: 'http://localhost:8080',
+                target: 'http://localhost:8084',
             },
         }
     }
