@@ -12,34 +12,35 @@
 </template>
 
 <script>
+import {onActivated, ref} from 'vue'
+
 export default {
-    name: 'Header',
-    data: function () {
-        return {
-            showAbs: true,
-            opacityStyle: {
-                opacity: 0
-            }
+  name: 'Header',
+  setup () {
+    const showAbs = ref(true)
+    const opacityStyle = ref({
+      opacity: 0
+    })
+
+    function handleScroll () {
+      const top = document.documentElement.scrollTop
+      if (top > 43) {
+        let opacity = top / 140
+        opacity = opacity > 1 ? 1 : opacity
+        this.opacityStyle = {
+          opacity
         }
-    },
-    methods: {
-        handleScroll() {
-            const top = document.documentElement.scrollTop
-            if (top > 43) {
-                let opacity = top / 140
-                opacity = opacity > 1 ? 1 : opacity
-                this.opacityStyle = {
-                    opacity
-                }
-                this.showAbs = false
-            } else {
-                this.showAbs = true
-            }
-        }
-    },
-    activated() {
-        window.addEventListener('scroll', this.handleScroll)
+        this.showAbs = false
+      } else {
+        this.showAbs = true
+      }
     }
+
+    onActivated(() => {
+      window.addEventListener('scroll', handleScroll)
+    })
+    return {showAbs, opacityStyle}
+  }
 }
 </script>
 

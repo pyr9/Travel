@@ -1,47 +1,48 @@
 <template>
     <div>
-        <div class="header" @click="handleBannerClick">
-            <div class="image">
-                <img :src="bannerImg" alt="">
-            </div>
-            <div class="info">
-                <div class="title">{{ sightName }}}</div>
-                <div class="number"><span class="iconfont banner-icon">&#xe8d3;</span>{{ this.galleryImages.length }}
-                </div>
-            </div>
+      <div class="header" @click="handleBannerClick">
+        <div class="image">
+          <img :src="props.bannerImg" alt="">
         </div>
-        <common-gallery v-show="showGallery" :galleryImages="galleryImages"
-                        @closeGallery="handleGalleryClick"></common-gallery>
+        <div class="info">
+          <div class="title">{{ props.sightName }}}</div>
+          <div class="number"><span class="iconfont banner-icon">&#xe8d3;</span>{{ props.galleryImages.length }}
+          </div>
+        </div>
+      </div>
+      <common-gallery v-show="showGallery" :galleryImages="props.galleryImages"
+                      @closeGallery="handleGalleryClick"></common-gallery>
     </div>
 </template>
 
 <script>
 
-import CommonGallery from "@/common/gallery/Gallery";
+import CommonGallery from '@/common/gallery/Gallery'
+import {ref} from 'vue'
 
 export default {
-    name: 'DetailHeader',
-    props: {
-        sightName: String,
-        bannerImg: String,
-        galleryImages: Array
-    },
-    components: {
-        CommonGallery
-    },
-    data: function () {
-        return {
-            showGallery: false
-        }
-    },
-    methods: {
-        handleBannerClick() {
-            this.showGallery = true
-        },
-        handleGalleryClick() {
-            this.showGallery = false
-        }
+  name: 'DetailHeader',
+  props: {
+    sightName: String,
+    bannerImg: String,
+    galleryImages: Array
+  },
+  components: {
+    CommonGallery
+  },
+  setup (props) {
+    const showGallery = ref(false)
+
+    function handleBannerClick () {
+      showGallery.value = true
     }
+
+    function handleGalleryClick () {
+      showGallery.value = false
+    }
+
+    return {props, showGallery, handleBannerClick, handleGalleryClick}
+  }
 }
 </script>
 

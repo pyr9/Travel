@@ -12,43 +12,45 @@ import DetailBanner from './components/Banner'
 import DetailHeader from './components/Header'
 import DetailList from './components/List'
 import axios from 'axios'
+import {useRoute} from 'vue-router'
+import {onMounted, ref} from 'vue'
 
 export default {
-    name: 'Detail',
-    data() {
-        return {
-            sightName: '',
-            categoryList: [],
-            bannerImg: '',
-            galleryImages: []
+  name: 'Detail',
+  components: {
+    DetailList,
+    DetailBanner,
+    DetailHeader,
+    List: DetailList
+  },
+  setup () {
+    let sightName = ref('')
+    let categoryList = ref([])
+    let bannerImg = ref('')
+    let galleryImages = ref([])
+    const route = useRoute()
+
+    async function queryCityDetailById () {
+      const response = await axios.get('/api/detail.json', {
+        params: {
+          id: route.params.id
         }
-    },
-    components: {
-        DetailList,
-        DetailBanner,
-        DetailHeader,
-        List: DetailList
-    },
-    methods: {
-        queryCityDetailById() {
-            axios.get('/api/detail.json', {
-                params: {
-                    id: this.$route.params.id
-                }
-            }).then((response) => {
-                const data = response.data
-                if (data.isSuccess && data.data) {
-                    this.categoryList = data.data.categoryList
-                    this.sightName = data.data.sightName
-                    this.bannerImg = data.data.bannerImg
-                    this.galleryImages = data.data.galleryImages
-                }
-            })
-        }
-    },
-    mounted() {
-        this.queryCityDetailById()
+      })
+      const res = response.data
+      if (res.isSuccess && res.data) {
+        categoryList.value = res.data.categoryList
+        sightName.value = res.data.sightName
+        bannerImg.value = res.data.bannerImg
+        galleryImages.value = res.data.galleryImages
+      }
     }
+
+    onMounted(() => {
+      queryCityDetailById()
+    })
+
+    return {sightName, categoryList, bannerImg, galleryImages}
+  }
 }
 </script>
 
